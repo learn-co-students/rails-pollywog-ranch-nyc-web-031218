@@ -19,11 +19,11 @@
       <% end %>
     </ol><br>
   <% end %>
-  <a href="/frogs">Back</a> | 
-  <a href="/frogs/<%= @frog.id %>/edit">Edit</a> | 
+  <a href="/frogs">Back</a> |
+  <a href="/frogs/<%= @frog.id %>/edit">Edit</a> |
   <a href="/frogs/<%= @frog.id %>/destroy">Delete</a>
 </div>
 
 <div class="card">
-  <img src="http://<%= @frog.color %>-frog.jpg.to/" alt="Frog Picture" width="350">
+  <img src=<%= @frog.img %> alt="Frog Picture" width="350">
 </div>

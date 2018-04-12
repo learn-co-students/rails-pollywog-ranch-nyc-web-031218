@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   # code your post to  '/tadpoles/:id/metamorphose' here
   # it should direct to the tadpoles controller, the metamorphose action
-
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose'
   # resources
   resources :ponds
 
@@ -22,3 +22,15 @@ Rails.application.routes.draw do
   end
 
 end
+
+# TadpolesController
+#   post tadpoles/:id/metamorphose
+#     makes a new frog with the tadpole's name, color, and pond (FAILED - 10)
+#     deletes the tadpole from the database (FAILED - 11)
+#     redirects to the newly made frog's show page (FAILED - 12)
+
+
+
+# Metamorphose
+#   has a button called 'Become a frog' on the tadpole show page (FAILED - 13)
+#   can click on the button and the tadpole becomes a frog (FAILED - 14)
