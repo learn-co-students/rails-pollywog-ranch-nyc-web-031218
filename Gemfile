@@ -48,6 +48,10 @@ group :test, :development do
   gem 'launchy', '~> 2.4.3'
 end
 
+gem 'web-console', group: :development
+
+
+
 group :production do
   gem "google-analytics-rails"
   gem "rails_12factor"
