@@ -15,6 +15,7 @@ class TadpolesController < ApplicationController
     @tadpole = Tadpole.new
   end
 
+
   def edit
     @frog = @tadpole.frog
   end
@@ -40,6 +41,16 @@ class TadpolesController < ApplicationController
     end
   end
 
+  def metamorphose
+    @tadpole = Tadpole.find(params[:id])
+    id = @tadpole.frog.pond_id
+    name = @tadpole.name
+    color = @tadpole.color
+    @tadpole.destroy
+    @frog = Frog.create(name: name, color: color, pond_id: id, img: "https://cdn.bulbagarden.net/upload/thumb/7/73/Poli.png/200px-Poli.png")
+    redirect_to frog_path(@frog)
+  end
+
   def destroy
     @tadpole.destroy
     respond_to do |format|
@@ -60,3 +71,11 @@ class TadpolesController < ApplicationController
       params.require(:tadpole).permit(:name, :color, :frog_id)
     end
 end
+
+
+
+# TadpolesController
+#   post tadpoles/:id/metamorphose
+#     makes a new frog with the tadpole's name, color, and pond (FAILED - 10)
+#     deletes the tadpole from the database (FAILED - 11)
+#     redirects to the newly made frog's show page (FAILED - 12)

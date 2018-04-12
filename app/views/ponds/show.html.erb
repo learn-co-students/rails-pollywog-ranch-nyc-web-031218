@@ -13,11 +13,11 @@
       </li>
     <% end %>
   </ol>
-  <a href="/ponds">Back</a> | 
-  <a href="/ponds/<%= @pond.id %>/edit">Edit</a> | 
+  <a href="/ponds">Back</a> |
+  <a href="/ponds/<%= @pond.id %>/edit">Edit</a> |
   <a href="/ponds/<%= @pond.id %>/destroy">Delete</a>
 </div>
 
 <div class="card">
-  <img src="http://<%= @pond.name %>-pond.jpg.to/" alt="Pond Picture" height="300">
+  <img src=<%= @pond.img %> alt="Pond Picture" height="300">
 </div>

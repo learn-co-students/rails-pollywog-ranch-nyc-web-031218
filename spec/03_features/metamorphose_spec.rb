@@ -8,12 +8,12 @@ describe "Metamorphose" do
     visit "/tadpoles/#{@tadpole.id}"
   end
 
-  it "has a button called 'Become a frog' on the tadpole show page" do
-    expect(page).to have_button('Become a frog')
+  it "has a button called 'Barmitzvah' on the tadpole show page" do
+    expect(page).to have_button('Barmitzvah')
   end
 
   it "can click on the button and the tadpole becomes a frog" do
-    click_button('Become a frog')
+    click_button('Barmitzvah')
 
     # deletes the tadpole from the database
     expect(Tadpole.find_by(:name => @tadpole.name)).to be_nil
