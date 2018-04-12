@@ -9,6 +9,7 @@ class FrogsController < ApplicationController
   def show
   end
 
+
   def new
     @frog = Frog.new
   end
