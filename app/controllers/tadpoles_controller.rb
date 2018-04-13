@@ -3,6 +3,18 @@ class TadpolesController < ApplicationController
 
   # add your metamorphose action here
 
+  def metamorphose
+    @frog = Frog.new
+    @frog.name = @tadpole.name
+    @frog.color = @tadpole.color
+    @frog.pond = @tadpole.pond
+    @frog.save
+    @tadpole.destroy
+
+
+    redirect_to @frog
+  end
+
   def index
     @tadpoles = Tadpole.all
   end
@@ -49,10 +61,12 @@ class TadpolesController < ApplicationController
 
   private
     def set_tadpole
+      
       @tadpole = Tadpole.find(params[:id])
     end
 
     def set_frog
+
       @frog = Frog.find(params[:frog_id])
     end
 
